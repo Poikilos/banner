@@ -1,3 +1,5 @@
+dofile(minetest.get_modpath("banner").."/loom.lua")
+
 local banner = {}
 local dyes = {
 	{"white",      "White",      nil},
@@ -16,20 +18,27 @@ local dyes = {
 	{"dark_grey",  "Dark Grey",  "unicolor_darkgrey"},
 	{"dark_green", "Dark Green", "unicolor_dark_green"},
 }
+
 minetest.register_node("banner:hanger", {
 	description = "Banner Hanger",
 	walkable = false,
-	drawtype = "signlike",
 	sunlight_propagates = true,
-	paramtype = "light",
 	inventory_image = "banner_top.png",
 	wield_image = "banner_top.png",
 	paramtype2 = "wallmounted",
+	drawtype = "nodebox",
+	paramtype = "light",
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{-0.5, -0.5, -0.5, 0.5, -0.4375, -0.4375}, -- NodeBox1
+		},
+	},
 	selection_box = {
 		type = "wallmounted",
 		fixed = {-0.5, -0.5, -0.1, 0.5, 0.5, 0.5},
 	},
-	tiles = {"banner_top.png"},
+	tiles = {"hanger.png"},
 	groups = {snappy=2,choppy=2,oddly_breakable_by_hand=3,flammable=3},
 })
 for _, row in ipairs(dyes) do

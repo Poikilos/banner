@@ -1,6 +1,8 @@
 # banner mod
 This is Anonymous_moose' banner mod for Minetest (previously only available on Dropbox with no commit history).
 
+NOTE: Version 0.1 and 0.2 on the topic point to the exact same dropbox link: <https://www.dropbox.com/s/jeggsvvk8jydmzi/banner.zip?dl=0>
+
 ## License
 - Media: [Attribution-ShareAlike 4.0
   International](https://creativecommons.org/licenses/by-sa/4.0/)
